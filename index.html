@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Nómina</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Calculadora de Nómina</h1>
+  <p class="mobile">Version Mobile</p>
+  <p class="desktop">Version Desktop</p>
+  <main class="mainContent">
+    <form id="payrollForm">
+      <section class="sectionData">
+        <fieldset class="fieldVariablesFijas">
+          <legend>Variables fijas</legend>
+          <div data-precio="50.72"><label for="salarioBaseDia">Salario Base Día</label><input type="number" id="salarioBaseDia" readonly></div>
+          <div data-precio="12.91"><label for="horaExtra">Hora Extra</label><input type="number" id="horaExtra" readonly></div>
+          <div data-precio="3.06"><label for="horaNocturna">Hora Nocturna</label><input type="number" id="horaNocturna" readonly></div>
+          <div data-precio="22.90"><label for="diaFestivo">Día Festivo</label><input type="number" id="diaFestivo" readonly></div>
+          <div data-precio="8.83"><label for="dieta">Dieta</label><input type="number" id="dieta" readonly></div>
+          <div data-precio="13.61"><label for="dietaFueraPlaza">Dieta Fuera Plaza</label><input type="number" id="dietaFueraPlaza" readonly></div>
+          <div data-precio="8.2481"><label for="plusPerceptor">Plus Perceptor</label><input type="number" id="plusPerceptor" readonly></div>
+          <div data-precio="1.33"><label for="plusQuebranto">Plus Quebranto</label><input type="number" id="plusQuebranto" readonly></div>
+          <div data-precio="380.40"><label for="ppExtras">P. Pagas Extras</label><input type="number" id="ppExtras" readonly></div>
+          <div><label class="ajusteIRPFLabel" for="ajusteIRPF" title="AJUSTAR IRPF FORMATO 17.06">Ajuste IRPF</label><input placeholder="00,00" type="number" class="ajusteIRPFClass" id="ajusteIRPF" step="0.01" required></div>
+        </fieldset>
+        <fieldset class="fieldSeleccionFechas">
+          <legend>Selección Fechas</legend>
+          <div><label for="inicioFecha">Fecha de inicio</label><input type="date" id="inicioFecha"></div>
+          <div><label for="finFecha">Fecha final</label><input type="date" id="finFecha"></div>
+          <div><label for="diasTrabajados">Días trabajados</label><input type="number" id="diasTrabajados" readonly></div>
+        </fieldset>
+        <fieldset class="fieldSemana" data-semana="1">
+          <legend>Semana 1</legend>
+            <div><label for="horasExtras1" title="Horas Extras">HE</label><input type="number" name="horasExtras" id="horasExtras1" class="horasExtras" value="0"></div>
+            <div><label for="horasNocturnas1" title="Horas Nocturnas">HN</label><input type="number" name="horasNocturnas" id="horasNocturnas1" class="horasNocturnas" value="0"></div>
+            <div><label for="festivos1" title="Festivos">FEST</label><input type="number" name="festivos" id="festivos1" class="festivos" value="0"></div>
+            <div><label for="dietas1" title="Dietas">DIET</label><input type="number" name="dietas" id="dietas1" class="dietas" value="0"></div>
+            <div><label for="dietasFueraPlaza1" title="Dietas Fuera de Plaza">DFP</label><input type="number" name="dietasFueraPlaza" id="dietasFueraPlaza1" class="dietasFueraPlaza" value="0"></div>
+            <div><label for="conductorPerceptor1" title="Plus Conductor Perceptor">PCP</label><input type="number" name="conductorPerceptor" id="conductorPerceptor1" class="conductorPerceptor" value="0"></div>
+            <div><label for="quebrantoMoneda1" title="Plus Quebranto Moneda">PQM</label><input type="number" name="quebrantoMoneda" id="quebrantoMoneda1" class="quebrantoMoneda" value="0"></div>
+        </fieldset>
+        <fieldset class="fieldSemana" data-semana="2">
+          <legend>Semana 2</legend>
+            <div><label for="horasExtras2" title="Horas Extras">HE</label><input type="number" name="horasExtras" id="horasExtras2" class="horasExtras" value="0"></div>
+            <div><label for="horasNocturnas2" title="Horas Nocturnas">HN</label><input type="number" name="horasNocturnas" id="horasNocturnas2" class="horasNocturnas" value="0"></div>
+            <div><label for="festivos2" title="Festivos">FEST</label><input type="number" name="festivos" id="festivos2" class="festivos" value="0"></div>
+            <div><label for="dietas2" title="Dietas">DIET</label><input type="number" name="dietas" id="dietas2" class="dietas" value="0"></div>
+            <div><label for="dietasFueraPlaza2" title="Dietas Fuera de Plaza">DFP</label><input type="number" name="dietasFueraPlaza" id="dietasFueraPlaza2" class="dietasFueraPlaza" value="0"></div>
+            <div><label for="conductorPerceptor2" title="Plus Conductor Perceptor">PCP</label><input type="number" name="conductorPerceptor" id="conductorPerceptor2" class="conductorPerceptor" value="0"></div>
+            <div><label for="quebrantoMoneda2" title="Plus Quebranto Moneda">PQM</label><input type="number" name="quebrantoMoneda" id="quebrantoMoneda2" class="quebrantoMoneda" value="0"></div>
+        </fieldset>
+        <fieldset class="fieldSemana" data-semana="3">
+          <legend>Semana 3</legend>
+            <div><label for="horasExtras3" title="Horas Extras">HE</label><input type="number" name="horasExtras" id="horasExtras3" class="horasExtras" value="0"></div>
+            <div><label for="horasNocturnas3" title="Horas Nocturnas">HN</label><input type="number" name="horasNocturnas" id="horasNocturnas3" class="horasNocturnas" value="0"></div>
+            <div><label for="festivos3" title="Festivos">FEST</label><input type="number" name="festivos" id="festivos3" class="festivos" value="0"></div>
+            <div><label for="dietas3" title="Dietas">DIET</label><input type="number" name="dietas" id="dietas3" class="dietas" value="0"></div>
+            <div><label for="dietasFueraPlaza3" title="Dietas Fuera de Plaza">DFP</label><input type="number" name="dietasFueraPlaza" id="dietasFueraPlaza3" class="dietasFueraPlaza" value="0"></div>
+            <div><label for="conductorPerceptor3" title="Plus Conductor Perceptor">PCP</label><input type="number" name="conductorPerceptor" id="conductorPerceptor3" class="conductorPerceptor" value="0"></div>
+            <div><label for="quebrantoMoneda3" title="Plus Quebranto Moneda">PQM</label><input type="number" name="quebrantoMoneda" id="quebrantoMoneda3" class="quebrantoMoneda" value="0"></div>
+        </fieldset>
+        <fieldset class="fieldSemana" data-semana="4">
+          <legend>Semana 4</legend>
+            <div><label for="horasExtras4" title="Horas Extras">HE</label><input type="number" name="horasExtras" id="horasExtras4" class="horasExtras" value="0"></div>
+            <div><label for="horasNocturnas4" title="Horas Nocturnas">HN</label><input type="number" name="horasNocturnas" id="horasNocturnas4" class="horasNocturnas" value="0"></div>
+            <div><label for="festivos4" title="Festivos">FEST</label><input type="number" name="festivos" id="festivos4" class="festivos" value="0"></div>
+            <div><label for="dietas4" title="Dietas">DIET</label><input type="number" name="dietas" id="dietas4" class="dietas" value="0"></div>
+            <div><label for="dietasFueraPlaza4" title="Dietas Fuera de Plaza">DFP</label><input type="number" name="dietasFueraPlaza" id="dietasFueraPlaza4" class="dietasFueraPlaza" value="0"></div>
+            <div><label for="conductorPerceptor4" title="Plus Conductor Perceptor">PCP</label><input type="number" name="conductorPerceptor" id="conductorPerceptor4" class="conductorPerceptor" value="0"></div>
+            <div><label for="quebrantoMoneda4" title="Plus Quebranto Moneda">PQM</label><input type="number" name="quebrantoMoneda" id="quebrantoMoneda4" class="quebrantoMoneda" value="0"></div>
+        </fieldset>
+        <fieldset class="fieldSemana" data-semana="5">
+          <legend>Semana 5</legend>
+            <div><label for="horasExtras5" title="Horas Extras">HE</label><input type="number" name="horasExtras" id="horasExtras5" class="horasExtras" value="0"></div>
+            <div><label for="horasNocturnas5" title="Horas Nocturnas">HN</label><input type="number" name="horasNocturnas" id="horasNocturnas5" class="horasNocturnas" value="0"></div>
+            <div><label for="festivos5" title="Festivos">FEST</label><input type="number" name="festivos" id="festivos5" class="festivos" value="0"></div>
+            <div><label for="dietas5" title="Dietas">DIET</label><input type="number" name="dietas" id="dietas5" class="dietas" value="0"></div>
+            <div><label for="dietasFueraPlaza5" title="Dietas Fuera de Plaza">DFP</label><input type="number" name="dietasFueraPlaza" id="dietasFueraPlaza5" class="dietasFueraPlaza" value="0"></div>
+            <div><label for="conductorPerceptor5" title="Plus Conductor Perceptor">PCP</label><input type="number" name="conductorPerceptor" id="conductorPerceptor5" class="conductorPerceptor" value="0"></div>
+            <div><label for="quebrantoMoneda5" title="Plus Quebranto Moneda">PQM</label><input type="number" name="quebrantoMoneda" id="quebrantoMoneda5" class="quebrantoMoneda" value="0"></div>
+        </fieldset>
+        <fieldset class="fieldRecuentoMensual">
+          <legend>Recuento Mensual</legend>
+          <div><label for="totalHorasExtras" title="Total Horas Extras">THE</label><input type="number" name="totalHorasExtras" id="totalHorasExtras" value="0" readonly></div>
+          <div><label for="totalHorasNocturnas" title="Total Horas Nocturnas">THN</label><input type="number" name="totalHorasNocturnas" id="totalHorasNocturnas" value="0" readonly></div>
+          <div><label for="totalFestivos" title="Total Festivos">TF</label><input type="number" name="totalFestivos" id="totalFestivos" value="0" readonly></div>
+          <div><label for="totalDietas" title="Total Dietas">TD</label><input type="number" name="totalDietas" id="totalDietas" value="0" readonly></div>
+          <div><label for="totalDietasFueraPlaza" title="Total Dietas Fuera de Plaza">TDFP</label><input type="number" name="totalDietasFueraPlaza" id="totalDietasFueraPlaza" value="0" readonly></div>
+          <div><label for="totalConductorPerceptor" title="Total Conductor Perceptor">TCP</label><input type="number" name="totalConductorPerceptor" id="totalConductorPerceptor" value="0" readonly></div>
+          <div><label for="totalQuebrantoMoneda" title="Total Quebranto Moneda">TQM</label><input type="number" name="totalQuebrantoMoneda" id="totalQuebrantoMoneda" value="0" readonly></div>
+        </fieldset>
+        <button type="submit">Calcular Nómina</button>
+        <fieldset class="fieldDevengos">
+          <legend>Devengos</legend>
+            <div><label for="salarioBaseDevengado" title="Salario base">Salario base</label><input type="number" name="salarioBaseDevengado" id="salarioBaseDevengado" readonly></div>
+            <div><label for="devengosHorasExtras" title="Horas Extras">Horas Extras</label><input type="number" name="devengosHorasExtras" id="devengosHorasExtras" readonly></div>
+            <div><label for="devengosHorasNocturnas" title="Horas Nocturnas">Horas Nocturnas</label><input type="number" name="devengosHorasNocturnas" id="devengosHorasNocturnas" readonly></div>
+            <div><label for="devengosFestivos" title="Festivos">Festivos</label><input type="number" name="devengosFestivos" id="devengosFestivos" readonly></div>
+            <div><label for="devengosDietas" title="Dietas">Dietas</label><input type="number" name="devengosDietas" id="devengosDietas" readonly></div>
+            <div><label for="devengosDietasFueraPlaza" title="Dietas Fuera de Plaza">Dietas Fuera de Plaza</label><input type="number" name="devengosDietasFueraPlaza" id="devengosDietasFueraPlaza" readonly></div>
+            <div><label for="devengosConductorPerceptor" title="Conductor Perceptor">Conductor Perceptor</label><input type="number" name="devengosConductorPerceptor" id="devengosConductorPerceptor" readonly></div>
+            <div><label for="devengosQuebrantoMoneda" title="Quebranto Moneda">Quebranto Moneda</label><input type="number" name="devengosQuebrantoMoneda" id="devengosQuebrantoMoneda" readonly></div>
+        </fieldset>
+        <fieldset class="fieldDeducciones">
+          <legend>Deducciones</legend>
+          <div data-precio="0.0470"><label for="deduccContComu" title="Contingencias Comunes">Cont. Comunes</label><input type="number" id="deduccContComu" readonly></div>
+          <div data-precio="0.0013"><label for="deduccMei" title="Mecanismo de Equidad Intergeneracional">MEI</label><input type="number" id="deduccMei" readonly></div>
+          <div data-precio="0.0010"><label for="deduccAtEp" title="Accidentes de Trabajo (A.T.) y Equidad de Pensiones (EP)">AT y EP</label><input type="number" id="deduccAtEp" readonly></div>
+          <div data-precio="0.0155"><label for="deduccDesemp" title="Desempleo">Desempleo</label><input type="number" id="deduccDesemp" readonly></div>
+          <div data-precio="0.047"><label for="deduccCotiHsEx" title="Cotización Horas Extras">Cotización Horas Extras</label><input type="number" id="deduccCotiHsEx" readonly></div>
+          <div><label for="deduccIrpf" title="Deducción IRPF">IRPF</label><input type="number" id="deduccIrpf" readonly></div>
+          <div><label for="deduccTotal" title="Total Deducciones">Total Deducciones</label><input type="number" id="deduccTotal" readonly></div>
+        </fieldset>
+        <fieldset class="fieldDevengosBases">
+          <legend>Bases</legend>
+          <div><label for="devengoBaseAtyDes" title="Accidentes de Trabajo (A.T.) y Desempleo (DES.)">Base AT y DES</label><input type="number" name="devengoBaseAtyDes" id="devengoBaseAtyDes" readonly></div>
+          <div><label for="devengoBaseSS" title="Base de Seguridad Social">Base SS</label><input type="number" name="devengoBaseSS" id="devengoBaseSS" readonly></div>
+          <div><label for="devengoBaseIRPF" title="Base de IRPF">Base IRPF</label><input type="number" name="devengoBaseIRPF" id="devengoBaseIRPF" readonly></div>
+          <div><label for="remuTotal" title="Remuneración Total">Remuneración Total</label><input type="number" name="remuTotal" id="remuTotal"readonly></div>
+          <div><label for="totalDevengado" title="Total Devengado">Total Devengado</label><input type="number" name="totalDevengado" id="totalDevengado"readonly></div>
+        </fieldset>
+        <fieldset class="LiquidoPercibir">
+          <legend>Liquido a Percibir</legend>
+          <div><input type="text" name="totalLiquido" id="totalLiquido" readonly></div>
+        </fieldset>
+      </section>
+      
+    </form>
+    <div id="result"></div>
+  </main>
+  <script type="module" src="script.js"></script>
+</body>
+</html>

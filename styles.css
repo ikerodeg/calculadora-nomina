@@ -1,0 +1,487 @@
+:root {
+  --background-color: hsl(0, 0%, 25%);
+  --primary-color: hsl(210, 100%, 40%);
+  --text-color--blur: hsl(0, 0%, 73%);
+  --text-color: hsl(0, 0%, 31%);
+  --text-color--accent: hsl(0, 0%, 0%);
+  --input-color--blur: hsl(0, 0%, 61%);
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  inline-size: fit-content;
+  margin-inline: auto;
+  margin-block-end: 1rem;
+  color: rgb(177, 177, 177);
+  text-shadow: 1px 1px 3px hsl(0, 0%, 0%);
+}
+.mobile{
+  text-align: center;
+  color: hsl(0, 100%, 74%);
+  margin-block-end: 1em;
+  padding: 0;
+}
+.desktop{
+  display: none;
+}
+
+form {
+  background: hsl(0, 0%, 47%);
+  border-radius: 10px;
+  box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1);
+  padding: 0.8em;
+
+  fieldset {
+    /* fieldSet General */
+    padding: 1em;
+    margin-block-end: 2rem;
+    border-radius: 0.3em;
+    border: 1px solid hsla(0, 0%, 24%, 0.555);
+
+    div {
+      display: flex;
+      flex-direction: row;
+      overflow: hidden;
+      background-color: hsl(0, 0%, 31%);
+      border-radius: 0.3em;
+      box-shadow: 1px 1px 3px hsl(0, 0%, 0%);
+      margin-block: 1em;
+
+      label {
+        padding: 0.5em;
+        inline-size: 100%;
+        padding-inline: 1em;
+        text-shadow: 1px 1px 3px hsl(0, 0%, 0%);
+        color: var(--text-color--blur);
+      }
+
+      input {
+        inline-size: 40%;
+        padding: 0.5em;
+        font-size: 1rem;
+        text-align: center;
+        background-color: var(--input-color--blur);
+        color: var(--text-color);
+      }
+
+
+
+    }
+  }
+
+  .fieldVariablesFijas {
+    legend {
+      color: hsl(0, 100%, 80%);
+      text-shadow: 1px 1px 3px hsl(0, 0%, 0%);
+    }
+
+    input {
+      font-weight: 600;
+    }
+
+    .ajusteIRPFLabel {
+      font-weight: 800;
+      color: hsl(0, 100%, 74%);
+    }
+
+    .ajusteIRPFClass {
+      background-color: hsl(0, 0%, 100%);
+      font-weight: 800;
+      color: hsl(0, 0%, 0%);
+    }
+  }
+
+  .fieldSeleccionFechas {
+    legend {
+      color: hsl(224, 100%, 82%);
+      text-shadow: 1px 1px 3px hsl(0, 0%, 0%);
+    }
+
+    #inicioFecha,
+    #finFecha {
+      background-color: hsl(0, 0%, 100%);
+    }
+
+    #inicioFecha:hover,
+    #finFecha:hover {
+      cursor: pointer;
+    }
+
+    #diasTrabajados {
+      font-weight: 800;
+      color: hsl(115, 100%, 13%);
+      text-shadow: 0 0 5px hsl(135, 100%, 50%);
+    }
+  }
+
+  .fieldSemana,
+  .fieldRecuentoMensual {
+    legend {
+      text-shadow: 1px 1px 3px hsl(0, 0%, 0%);
+      color: hsl(91, 52%, 61%);
+    }
+
+    input {
+      background-color: hsl(0, 0%, 100%);
+      text-align: center;
+    }
+  }
+
+  .fieldRecuentoMensual {
+    legend {
+      color: hsl(298, 79%, 74%);
+      text-shadow: 1px 1px 3px hsl(0, 0%, 0%);
+    }
+
+    div {
+      input {
+        color: hsl(0, 0%, 0%);
+        background-color: hsl(0, 0%, 61%);
+      }
+    }
+  }
+
+  .fieldDevengos {
+    legend {
+      color: hsl(167, 79%, 74%);
+      text-shadow: 1px 1px 3px hsl(0, 0%, 0%);
+    }
+  }
+
+  .fieldDeducciones {
+    legend {
+      color: hsl(34, 79%, 74%);
+      text-shadow: 1px 1px 3px hsl(0, 0%, 0%);
+    }
+  }
+
+  .fieldDevengosBases {
+    legend {
+      color: hsl(207, 79%, 74%);
+      text-shadow: 1px 1px 3px hsl(0, 0%, 0%);
+    }
+  }
+
+  .LiquidoPercibir {
+    legend {
+      color: hsl(106, 79%, 74%);
+      text-shadow: 1px 1px 3px hsl(0, 0%, 0%);
+    }
+
+    div {
+      inline-size: 100%;
+    }
+
+    input {
+      inline-size: 100%;
+      background-color: hsl(0, 0%, 17%);
+      color: hsl(98, 100%, 50%);
+      font-weight: 800;
+      font-size: 3rem;
+    }
+  }
+
+  button {
+    display: block;
+    margin-inline: auto;
+    margin-block: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 800;
+    background-color: var(--primary-color);
+    color: rgb(0, 255, 0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 0 10px hsl(0, 0%, 0%);
+  }
+
+  button:hover {
+    background-color: hsl(210, 100%, 30%);
+  }
+
+}
+
+
+
+@media (width > 640px) {
+  .mainContent {
+    inline-size: clamp(760px, 70vw, 920px);
+    margin-inline: auto;
+    margin-block-end: 3rem;
+  }
+  .mobile{
+    display: none;
+  }
+  .desktop{
+    display: block;
+    text-align: center;
+    color: hsl(0, 100%, 74%);
+    margin-block-end: 1em;
+    padding: 0;
+  }
+  form {
+    background: hsl(0, 0%, 47%);
+    border-radius: 10px;
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1);
+    padding: 0.8em;
+
+    fieldset {
+      padding: 1em;
+      margin-block-end: 2rem;
+      border-radius: 0.3em;
+      border: 1px solid hsla(0, 0%, 24%, 0.555);
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        overflow: hidden;
+        inline-size: fit-content;
+        background-color: hsl(0, 0%, 31%);
+        border-radius: 0.3em;
+        box-shadow: 1px 1px 3px hsl(0, 0%, 0%);
+
+        label {
+          display: block;
+          inline-size: 100%;
+          padding-inline: 0;
+          text-align: center;
+          text-shadow: 1px 1px 3px hsl(0, 0%, 0%);
+          color: var(--text-color--blur);
+        }
+
+        input {
+          display: block;
+          inline-size: 100%;
+          padding-block: 0.2em;
+          padding-inline: 0;
+          font-size: 1rem;
+          text-align: center;
+          background-color: var(--input-color--blur);
+          color: var(--text-color);
+        }
+
+        
+      }
+    }
+
+    .fieldVariablesFijas {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5vw;
+
+      div {
+        display: block;
+      }
+
+      legend {
+        color: hsl(0, 100%, 80%);
+        text-shadow: 1px 1px 3px hsl(0, 0%, 0%);
+      }
+
+      input {
+        inline-size: 100%;
+        font-weight: 600;
+      }
+
+      .ajusteIRPFLabel {
+        font-weight: 800;
+        color: hsl(0, 100%, 74%);
+      }
+
+      .ajusteIRPFClass {
+        background-color: hsl(0, 0%, 100%);
+        font-weight: 800;
+        color: hsl(0, 0%, 0%);
+      }
+    }
+    .fieldSeleccionFechas {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: space-evenly;
+      gap: 2em;
+
+      legend {
+        color: hsl(224, 100%, 82%);
+        text-shadow: 1px 1px 3px hsl(0, 0%, 0%);
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+        inline-size: 12em;
+
+        label{
+          display: block;
+          padding-block: 0.5em 0;
+          margin: 0;
+        }
+
+        input {
+          display: block;
+          inline-size: 100%;
+        }
+      }
+
+      #inicioFecha,
+      #finFecha {
+        background-color: hsl(0, 0%, 100%);
+      }
+
+      #inicioFecha:hover,
+      #finFecha:hover {
+        cursor: pointer;
+      }
+
+      #diasTrabajados {
+        font-weight: 800;
+        color: hsl(115, 100%, 13%);
+        text-shadow: 0 0 5px hsl(135, 100%, 50%);
+      }
+
+
+
+
+    }
+    .fieldSemana,
+    .fieldRecuentoMensual {
+      background-color: hsl(0, 0%, 42%);
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      gap: 2em;
+
+
+      legend {
+        text-shadow: 1px 1px 3px hsl(0, 0%, 0%);
+        color: hsl(91, 52%, 61%);
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+        inline-size: fit-content;
+
+        label {
+          display: block;
+          padding-block: 0.5em 0;
+          margin: 0;
+        }
+
+        input {
+          background-color: hsl(0, 0%, 100%);
+          text-align: center;
+        }
+      }
+    }
+    .fieldRecuentoMensual {
+      legend {
+        color: hsl(298, 79%, 74%);
+        text-shadow: 1px 1px 3px hsl(0, 0%, 0%);
+      }
+
+      div {
+
+        input {
+          color: hsl(0, 0%, 0%);
+          background-color: hsl(0, 0%, 61%);
+        }
+      }
+    }
+    .fieldDevengos,
+    .fieldDeducciones,
+    .fieldDevengosBases {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5em;
+      justify-content: center;
+      justify-items: center;
+
+      div {
+      display: block;
+        inline-size: fit-content;
+
+      label{
+        display: block;
+        padding-block: 0.3em 0.2em;
+        margin: 0;
+      }
+
+      input {
+        background-color: hsl(0, 0%, 77%);
+      }
+
+
+    }
+    }
+
+    .fieldDevengos {
+      legend {
+        color: hsl(167, 79%, 74%);
+        text-shadow: 1px 1px 3px hsl(0, 0%, 0%);
+      }
+    }
+
+    .fieldDeducciones {
+      legend {
+        color: hsl(34, 79%, 74%);
+        text-shadow: 1px 1px 3px hsl(0, 0%, 0%);
+      }
+    }
+
+    .fieldDevengosBases {
+      legend {
+        color: hsl(207, 79%, 74%);
+        text-shadow: 1px 1px 3px hsl(0, 0%, 0%);
+      }
+    }
+
+    .LiquidoPercibir {
+      legend {
+        color: hsl(106, 79%, 74%);
+        text-shadow: 1px 1px 3px hsl(0, 0%, 0%);
+      }
+
+      div {
+        inline-size: 100%;
+      }
+
+      input {
+        inline-size: 100%;
+        background-color: hsl(0, 0%, 17%);
+        color: hsl(98, 100%, 50%);
+        font-weight: 800;
+        font-size: 3rem;
+      }
+    }
+
+    button {
+      display: block;
+      margin-inline: auto;
+      margin-block: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 800;
+      background-color: var(--primary-color);
+      color: rgb(0, 255, 0);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 0 10px hsl(0, 0%, 0%);
+    }
+
+    button:hover {
+      background-color: hsl(210, 100%, 30%);
+    }
+  }
+}
