@@ -59,6 +59,8 @@ Una **herramienta moderna** para calcular el salario en función de los días tr
    ```bash
    git clone https://github.com/ikerodeg/calculadora-nomina.git
    cd calculadora-nomina
+   ```
+   
 Abre el archivo index.html o payroll.html en tu navegador (recomendado usar un servidor local).
 
 ¡Empieza a calcular tu nómina de forma interactiva!
@@ -77,8 +79,6 @@ Este proyecto está licenciado bajo la Licencia MIT.
 ¡Disfruta de la Calculadora de Nómina y que nunca te falte lo que te corresponde!
 
 ---
-
-Este README.md es una base sólida que explica el proyecto, sus características, cómo usarlo, y proporciona una estructura clara para futuros colaboradores. ¿Te parece bien o deseas agregar algún otro detalle?
 
 
 
