@@ -1,6 +1,6 @@
 # Calculadora de Nómina
 
-![Calculadora de Nómina]([https://via.placeholder.com/800x400?text=Calculadora+de+N%C3%B3mina](https://credexia.com/wp-content/uploads/2020/09/c%C3%B3mo-calcular-una-n%C3%B3mina-1024x680.jpg))
+![Calculadora de Nómina](foto.jpg)
 
 Una **herramienta moderna** para calcular el salario en función de los días trabajados, horas extras, nocturnas, festivos, dietas y plus conductor. Esta calculadora utiliza las últimas funcionalidades de HTML, CSS y JavaScript (ES6 Modules) para ofrecer una experiencia interactiva y elegante.
 
