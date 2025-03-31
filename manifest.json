@@ -1,0 +1,1 @@
+{  "name": "Calculadora de Nóminas",  "short_name": "Calculadora Nómina",  "theme_color": "#4f4f4f",  "background_color": "#444444",  "display": "browser",  "orientation": "portrait",  "scope": "/",  "start_url": "https://ikerodeg.github.io/calculadora-nomina/"}
