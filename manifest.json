@@ -1,1 +1,16 @@
-{  "name": "Calculadora de Nóminas",  "short_name": "Calculadora Nómina",  "theme_color": "#4f4f4f",  "background_color": "#444444",  "display": "browser",  "orientation": "portrait",  "scope": "/",  "start_url": "https://ikerodeg.github.io/calculadora-nomina/"}
+{
+  "name": "Calculadora de Nóminas",
+  "theme_color": "#787878",
+  "background_color": "#616161",
+  "short_name": "Calculadora Nómina",
+  "id": "calc_nomi_app",
+  "description": "Calculadora de Nóminas.",
+  "categories": [
+    "productivity"
+  ],
+  "display_override": [
+    "window-controls-overlay",
+    "fullscreen",
+    "browser"
+  ]
+}
