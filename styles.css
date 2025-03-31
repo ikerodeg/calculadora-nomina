@@ -213,6 +213,10 @@ form {
 
 
 @media (width > 640px) {
+  header{
+    inline-size: clamp(760px, 70vw, 920px);
+    margin-inline: auto;
+  }
   .mainContent {
     inline-size: clamp(760px, 70vw, 920px);
     margin-inline: auto;
@@ -484,4 +488,11 @@ form {
       background-color: hsl(210, 100%, 30%);
     }
   }
+
+  input[type="number"]::-webkit-inner-spin-button{
+    appearance: none;
+  }
+
+
+
 }

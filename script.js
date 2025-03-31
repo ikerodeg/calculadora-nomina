@@ -159,7 +159,9 @@ document.addEventListener('DOMContentLoaded', () => {
     $devengosDietasFueraPlaza.value = calcularDevengos(totalDietasFueraPlaza, preciosFijos.dietaFueraPlaza).toFixed(2);
     $devengosConductorPerceptor.value = calcularDevengos(totalConductorPerceptor, preciosFijos.plusPerceptor).toFixed(2);
     $devengosQuebrantoMoneda.value = calcularDevengos(totalQuebrantoMoneda, preciosFijos.plusQuebranto).toFixed(2);
+    //TOTAL DEVENGADO es la suma de TODAS las percepciones que recibe el trabajador, cantidad bruta antes de cualquier deduccion
     $totalDevengado.value = (parseFloat($salarioBaseDevengado.value) + parseFloat($devengosDietas.value) + parseFloat($devengosHorasExtras.value) + parseFloat($devengosHorasNocturnas.value) + parseFloat($devengosDietasFueraPlaza.value) + parseFloat($devengosFestivos.value) + parseFloat($devengosConductorPerceptor.value) + parseFloat($devengosQuebrantoMoneda.value)).toFixed(2);
+    //REM. TOTAL son todos los conceptos que cotizan a la SS. Marcados con Asterisco en la nómina. Salario Base, Dietas cotizables, Plus Festivos, Tiempos de presencia.
     $remuTotal.value = (parseFloat($salarioBaseDevengado.value) + parseFloat($devengosDietas.value) + parseFloat($devengosDietasFueraPlaza.value) + parseFloat($devengosFestivos.value) + parseFloat($devengosConductorPerceptor.value) + parseFloat($devengosQuebrantoMoneda.value)).toFixed(2);
     $devengoBaseAtyDes.value = (parseFloat($totalDevengado.value) + parseFloat($ppExtras.value)).toFixed(2);
     $devengoBaseSS.value = parseFloat($devengoBaseAtyDes.value).toFixed(2) - parseFloat($devengosHorasExtras.value).toFixed(2);
