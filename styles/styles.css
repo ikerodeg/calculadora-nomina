@@ -2,11 +2,14 @@
   --bgMain: hsl(0, 0%, 25%);
   --bgForm: hsl(0, 0%, 47%);
   --bgLgnd: hsl(0, 0%, 0%);
+  --bgInputReadOnly: hsl(0, 0%, 55%);
   --txtClrLght: hsl(0, 0%, 73%);
   --txtClrLght-accent: hsl(0, 0%, 100%);
   --txtClrDark: hsl(0, 0%, 31%);
   --txtClrDark-accent: hsl(0, 0%, 0%);
   --brdrFldst: hsl(0, 0%, 0%);
+
+  --gapBlockDiv: clamp(0.7rem, 3vw, 1.4rem);
 
 
 }
@@ -18,9 +21,11 @@ body {
 }
 
 
-@media (width < 520px) { /*Versión Mobile*/
+@media (width < 560px) { /*Versión Mobile Portrait*/
   h1 {
-    inline-size: fit-content;
+    font-size: 2rem;
+    text-align: center;
+    inline-size: 340px;
     margin-inline: auto;
     margin-block-start: 0.5rem;
     color: rgb(177, 177, 177);
@@ -30,12 +35,20 @@ body {
     inline-size: fit-conten;
     margin-inline: auto;
     text-align: center;
-    margin-block-end: 0.5rem;
+    margin-block: 0.5rem;
+    font-size: 0.7rem;
   }
-
+  .mainContent{
+    min-inline-size: 320px;
+    inline-size: 90vw;
+    margin-block-start: 1rem;
+    margin-inline: auto;
+  }
   form#formulario {
+    max-inline-size: 350px;
     margin-inline: auto;
     padding: 1em;
+    border-radius: 0.5em;
     background-color: var(--bgForm);
   }
   fieldset {
@@ -56,19 +69,20 @@ body {
   fieldset div {
     display: flex;
     flex-direction: row;
-    overflow: hidden;
+    margin-block: var(--gapBlockDiv);
     background-color: var(--bgMain);
     box-shadow: 1px 1px 3px var(--brdrFldst);
     padding-inline-start: 0.5em;
     border-radius: 0.2em;
-    margin-block-end: 0.5em;
   }
   fieldset label{
-    font-size: 0.75rem;
+    font-size: 1rem;
     inline-size: 70%;
-    padding-block: 0.3rem 0;
+    padding-block: 0.5rem 0;
   }
   fieldset input {
+    font-size: 1.2rem;
+    font-weight: 800;
     padding-block-start: 0.2rem;
     text-align: center;
     inline-size: 30%;
@@ -76,6 +90,18 @@ body {
     border-radius: 4px;
     transition: all 0.3s ease;
   }
+  .fieldSeleccionFechas input{
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+  input[id^="plusQbrMnd"], .fieldTotales input, .fieldDevengos input, .fieldDeducciones input, .fieldBasesTotales input, .liquidoPercibir input {
+    background-color: var(--bgInputReadOnly);
+  }
+  .liquidoPercibir input{
+    color: rgb(81, 255, 0);
+    text-shadow: 1px 1px 3px black;
+  }
+  
   /* Estilos para inputs en foco */
   fieldset input:focus {
     background-color: hsl(120, 22%, 69%);
@@ -118,51 +144,215 @@ body {
   #btnReset:hover{
     background-color: rgb(199, 18, 18);
   }
-  .pDesktop{
+  .desk{
     display: none;
   }
-  .pMobile{
+  .mob{
     display: block;
   }
-  
+  .lands{
+    display: none;
+  }
 }
 
-/*
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: var(--bg-main);
-  color: var(--text-color);
-  margin: 0;
-  padding: 0;
+@media (width >= 560px) { /*version Mobile landscape*/
+  header .desk, header .mob{
+    display: none;
+  }
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+    inline-size: fit-content;
+    margin-inline: auto;
+    margin-block-start: 0.5rem;
+    color: rgb(177, 177, 177);
+    text-shadow: 1px 1px 3px hsl(0, 0%, 0%);
+  }
+  .pLands{
+    inline-size: fit-conten;
+    margin-inline: auto;
+    text-align: center;
+    margin-block: 0.5rem;
+    font-size: 0.7rem;
+  }
+  .mainContent{
+    inline-size: 95vw;
+    margin-inline: auto;
+  }
+  #formulario{
+    padding: 0.5rem;
+  }
+  #formulario fieldset{
+    border-radius: 0.3rem;
+  }
+  #formulario legend{
+    text-align: center;
+    background-color: black;
+    padding: 0.3rem 0.5rem;
+    border-radius: 0.3rem;
+  }
+  #formulario input{
+    block-size: 1.6rem;
+    border-radius: 0.3rem;
+  }
+  #formulario label{
+    text-align: center;
+  }
+  #formulario input[id^="plusQbrMnd"]{
+    background-color: var(--bgInputReadOnly);
+  }
+  .fieldSeleccionFechas {
+    display: flex;
+    margin-block-end: 1rem;
+    text-align: center;
+  }
+  .fieldSeleccionFechas div{
+    margin-block-end: 0.5rem;
+  }
+  #diffFechas{
+    background-color: var(--bgInputReadOnly);
+    inline-size: 70%;
+  }
+  .fieldsSemanas .mob{
+    display: block;
+  }
+  .fieldsSemanas .desk{
+    display: none;
+  }
+  .fieldsSemanas{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem 0.5rem;
+    margin-block-end: 1rem;
+  }
+  .fieldSemana, .fieldSeleccionFechas, .fieldTotales{
+    padding: 0.5rem;
+  }
+  .fieldSemana input{
+    text-align: center;
+  }
+  .fieldSemana div, .fieldTotales div{
+    margin-block-end: 0.5rem;
+  }
+  .fieldSemana input, .fieldTotales input{
+    inline-size: 100%;
+  }
+  .fieldTotales input{
+    background-color: var(--bgInputReadOnly);
+    text-align: center;
+  }
+  .fieldAjustesNomina{
+    padding: 1rem 0.5rem;
+    display: flex;
+    justify-content: space-evenly;
+    margin-block-end: 1rem;
+  }
+  .fieldAjustesNomina div{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .fieldAjustesNomina input{
+    text-align: center;
+    padding-block: 0.2rem;
+    font-size: 1.2rem;
+    font-weight: 800;
+  }
+  .fieldAjustesNomina label{
+    color: darkorange;
+  }
+  .actions{
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 0.5rem;
+    margin-block-end: 1rem;
+    text-align: center;
+  }
+  .actions button{
+    outline: none;
+    border: none;
+    border-radius: 0.3rem;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    text-shadow: 1px 1px 3px black;
+    filter: drop-shadow(1px 1px 3px black);
+  }
+  .actions .calcNomin{
+    background-color: green;
+    color: greenyellow;
+  }
+  .actions #btnReset{
+    background-color: darkred;
+    color: hsl(0, 100%, 77%);
+  }
+  .actions .calcNomin:hover{
+    background-color: greenyellow;
+    color: green;
+  }
+  .actions #btnReset:hover{
+    background-color: hsl(0, 100%, 77%);
+    color: darkred;
+  }
+  .actions .calcNomin:active{
+    background-color: black;
+    color: greenyellow;
+  }
+  .actions #btnReset:active{
+    background-color: black;
+    color: hsl(0, 100%, 77%);
+  }
+  .fieldsResumenes .mob{
+    display: none;
+  }
+  .fieldsResumenes{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin-block-end: 1rem;
+  }
+  .fieldsResumenes fieldset{
+    padding: 0.5rem;
+    text-align: center;
+  }
+  .fieldsResumenes div{
+    margin-block-end: 0.5rem;
+  }
+  .fieldsResumenes input{
+    inline-size: 98%;
+    background-color: var(--bgInputReadOnly);
+    text-align: center;
+  }
+  .liquidoPercibir{
+    padding: 0.5rem;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    margin-block-end: 2rem;
+    gap: 2rem
+  }
+  .liquidoPercibir div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 0.5rem;
+    margin-block-end: 1rem;
+  }
+  .liquidoPercibir input{
+    inline-size: 98%;
+    text-align: center;
+    padding-block: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+    background-color: black;
+    color: greenyellow;
+
+  }
 }
-
-h1 {
-  inline-size: fit-content;
-  margin-inline: auto;
-  margin-block-end: 1rem;
-  color: rgb(177, 177, 177);
-  text-shadow: 1px 1px 3px hsl(0, 0%, 0%);
+@media (width >= 800px) { /*version Desktop*/
+  .desk{
+    display: block;
+  }
+  .lands, .mob{
+    display: none;
+  }
 }
-
-button {
-  display: block;
-  margin-inline: auto;
-  margin-block: 1.5rem;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 800;
-  background-color: var(--primary-color);
-  color: rgb(0, 255, 0);
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 0 10px hsl(0, 0%, 0%);
-}
-
-button:hover {
-  background-color: hsl(210, 100%, 30%);
-}
-
-
-  /*
