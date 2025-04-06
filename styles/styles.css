@@ -39,7 +39,6 @@ body {
     font-size: 0.7rem;
   }
   .mainContent{
-    min-inline-size: 320px;
     inline-size: 90vw;
     margin-block-start: 1rem;
     margin-inline: auto;
@@ -155,7 +154,7 @@ body {
   }
 }
 
-@media (width >= 560px) { /*version Mobile landscape*/
+@media (width >= 560px) and (width < 860px) { /*version Mobile landscape*/
   header .desk, header .mob{
     display: none;
   }
@@ -180,6 +179,8 @@ body {
     margin-inline: auto;
   }
   #formulario{
+    margin-inline: auto;
+    max-inline-size: 700px;
     padding: 0.5rem;
   }
   #formulario fieldset{
@@ -348,11 +349,228 @@ body {
 
   }
 }
-@media (width >= 800px) { /*version Desktop*/
-  .desk{
-    display: block;
-  }
-  .lands, .mob{
+@media (width >= 860px) { /*version Desktop*/
+  header .lands, header .mob{
     display: none;
   }
+  header .desk{
+    display: block;
+  }
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+    inline-size: fit-content;
+    margin-inline: auto;
+    margin-block-start: 0.5rem;
+    color: rgb(177, 177, 177);
+    text-shadow: 1px 1px 3px hsl(0, 0%, 0%);
+  }
+  .pDesktop{
+    inline-size: fit-conten;
+    margin-inline: auto;
+    text-align: center;
+    margin-block: 0.5rem;
+    font-size: 0.7rem;
+  }
+  .mainContent{
+    inline-size: 95vw;
+    margin-inline: auto;
+  }
+  #formulario{
+    max-inline-size: 1024px;
+    margin-inline: auto;
+    text-align: center;
+  }
+  #formulario legend{
+    background-color: black;
+    border-radius: 0.3rem;
+    padding: 0.2rem;
+    color: gray;
+    font-size: 1rem;
+  }
+  #formulario fieldset{
+    border-radius: 0.3rem;
+    border: 1px solid gray;
+  }
+  .fieldSeleccionFechas {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-evenly;
+    padding: 1rem;
+    margin-block-start: 1.3rem;
+  }
+  .fieldSeleccionFechas div{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3rem;
+    text-align: center;
+    align-items: center;
+  }
+  .fieldSeleccionFechas input{
+    padding-block: 0.2rem 0.1rem;
+    padding-inline: 0.3rem;
+  }
+  #diffFechas{
+    inline-size: 50%;
+    text-align: center;
+    background-color: var(--bgInputReadOnly);
+  }
+  .fieldsSemanas .mob{
+    display: none;
+  }
+  .fieldsSemanas .desk{
+    display: block;
+  }
+  .fieldsSemanas{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+    margin-block: 1.5rem;
+    justify-items: center;
+    justify-content: space-around;
+  }
+  .fieldsSemanas fieldset{
+    inline-size: 100%;
+  }
+  .fieldsSemanas legend{
+    text-align: center;
+  }
+  .fieldsSemanas div{
+    font-size: 1.3rem;
+    margin-block: 1rem;
+    padding: 0.3rem;
+  }
+  .fieldsSemanas label{
+    text-align: center;
+  }
+  .fieldsSemanas input{
+    inline-size: 70%;
+    padding-block: 0.2rem 0.1rem;
+    text-align: center;
+  }
+  #formulario input[id^="plusQbrMnd"]{
+    background-color: var(--bgInputReadOnly);
+  }
+  .fieldTotales input{
+    background-color: var(--bgInputReadOnly);
+  }
+  .fieldAjustesNomina{
+    padding: 1rem 0.5rem;
+    display: flex;
+    justify-content: space-evenly;
+    margin-block-end: 1rem;
+  }
+  .fieldAjustesNomina div{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.5rem;
+    align-items: center;
+  }
+  .fieldAjustesNomina input{
+    background-color: hsl(0, 0%, 82%);
+    border: 2px solid orange;
+    text-align: center;
+    padding-block: 0.2rem 0.1rem;
+    font-size: 1.8rem;
+    font-weight: 800;
+    inline-size: 50%;
+
+  }
+  .fieldAjustesNomina label{
+    color: darkorange;
+    margin-block-end: 0.5rem;
+  }
+  .actions{
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 0.5rem;
+    margin-block-end: 1rem;
+    text-align: center;
+  }
+  .actions button{
+    inline-size: 20rem;
+    outline: none;
+    border: none;
+    border-radius: 0.3rem;
+    font-size: 1.8rem;
+    padding: 0.5rem;
+    text-shadow: 1px 1px 3px black;
+    filter: drop-shadow(1px 1px 3px black);
+  }
+  .actions .calcNomin{
+    background-color: green;
+    color: greenyellow;
+  }
+  .actions #btnReset{
+    inline-size: 20rem;
+    background-color: darkred;
+    color: hsl(0, 100%, 77%);
+  }
+  .actions .calcNomin:hover{
+    background-color: greenyellow;
+    color: green;
+  }
+  .actions #btnReset:hover{
+    background-color: hsl(0, 100%, 77%);
+    color: darkred;
+  }
+  .actions .calcNomin:active{
+    background-color: black;
+    color: greenyellow;
+  }
+  .actions #btnReset:active{
+    background-color: black;
+    color: hsl(0, 100%, 77%);
+  }
+  .fieldsResumenes .mob{
+    display: none;
+  }
+  .fieldsResumenes{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-block-end: 1rem;
+    font-size: 1.3rem;
+  }
+  .fieldsResumenes fieldset{
+    padding: 0.5rem;
+    text-align: center;
+  }
+  .fieldsResumenes div{
+    margin-block: 1.3rem;
+  }
+  .fieldsResumenes input{
+    inline-size: 70%;
+    background-color: var(--bgInputReadOnly);
+    text-align: center;
+    font-size: 1.5rem;
+    padding-block: 0.5rem;
+  }
+  .liquidoPercibir{
+    padding-block: 1rem 0.5rem;
+    margin-block-end: 3rem;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.3rem;
+    text-align: center;
+  }
+  .liquidoPercibir div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-block-end: 1rem;
+  }
+  .liquidoPercibir input{
+    inline-size: 70%;
+    text-align: center;
+    padding-block: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+    background-color: black;
+    color: greenyellow;
+  }
+  
 }
